@@ -11,9 +11,22 @@ namespace SudokuSolver2
         public ISolverBehaviour SolverBehaviour { get; set; }
 
 
-        public void Display()
+        public void Display(Board board)
         {
-            Console.WriteLine("Show the solved puzzle on the screen");
+            for (int x = 0; x < 9; x++)
+            {
+                var row = new List<string>();
+                for (int y = 0; y < 9; y++)
+                {
+                    var square = board.BoardState[x][y].ConfirmedValue;
+                    var squareString = square.ToString();
+                    row.Add(squareString);
+                    row.Add(", ");
+
+                }
+                Console.WriteLine(row);
+            }
+
         }
 
         public Board Board;
