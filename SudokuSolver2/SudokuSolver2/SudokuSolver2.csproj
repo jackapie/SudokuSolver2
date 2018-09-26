@@ -46,12 +46,13 @@
     <Compile Include="Board1.cs" />
     <Compile Include="Board1Solver.cs" />
     <Compile Include="Board.cs" />
+    <Compile Include="BoardSquare.cs" />
     <Compile Include="ISolverBehaviour.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="SolveColumn.cs" />
-    <Compile Include="SolveSquare.cs" />
+    <Compile Include="SolveBox.cs" />
     <Compile Include="SolveRow.cs" />
     <Compile Include="SudokuBoardFactory.cs" />
   </ItemGroup>

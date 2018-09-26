@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SudokuSolver2
 {
-    public class SolveSquare : ISolverBehaviour
+    public class SolveBox : ISolverBehaviour
     {
         public void Solve(Board board)
         {
@@ -14,7 +14,7 @@ namespace SudokuSolver2
             {
                 for (int Y = 0; Y < 3; Y++)
                 {
-                    SolveSquareXY(board, X, Y);
+                    SolveBoxXY(board, X, Y);
                 }
 
             }
@@ -22,7 +22,7 @@ namespace SudokuSolver2
         }
 
        
-        private static void SolveSquareXY(Board board, int X,int Y)
+        private static void SolveBoxXY(Board board, int X,int Y)
         {
             var currentSquareMissing = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             int NumberOfZeros = 0;
@@ -32,7 +32,7 @@ namespace SudokuSolver2
             {
                 for (int y = 3*Y; y < (3*Y + 3); y++)
                 {
-                    var currentSquare = board.BoardType[x][y];
+                    var currentSquare = board.BoardState[x][y].ConfirmedValue;
                     if (currentSquare > 0)
                     {
                         currentSquareMissing.Remove(currentSquare);
@@ -47,7 +47,8 @@ namespace SudokuSolver2
             }
             if (NumberOfZeros == 1)
             {
-                board.BoardType[whereIsTheZeroX][whereIsTheZeroY] = currentSquareMissing[0];
+                var square = board.BoardState[whereIsTheZeroX][whereIsTheZeroY];
+                square.ConfirmedValue = currentSquareMissing[0];
             }
         }
     }

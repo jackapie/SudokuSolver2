@@ -17,7 +17,7 @@ namespace SudokuSolver2
                 int whereIsTheZero = -1;
                 for (int x = 0; x < 9; x++)
                 {
-                    var currentSquare = board.BoardType[x][y];
+                    var currentSquare = board.BoardState[x][y].ConfirmedValue;
                     if (currentSquare > 0)
                     {
                         currentColumnMissing.Remove(currentSquare);
@@ -30,7 +30,8 @@ namespace SudokuSolver2
                 }
                 if (NumberOfZeros == 1)
                 {
-                    board.BoardType[whereIsTheZero][y] = currentColumnMissing[0];
+                    var square = board.BoardState[whereIsTheZero][y]; 
+                    square.ConfirmedValue = currentColumnMissing[0];
                 }
             }
         }

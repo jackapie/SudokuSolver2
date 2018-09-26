@@ -10,7 +10,7 @@ namespace SudokuSolver2
     {
         public Board1()
         {
-            BoardType = new List<List<int>>
+            var board = new List<List<int>>
             {
                 new List<int> {0,5,7,1,0,8,3,4,0},
                 new List<int> {3,9,8,2,0,5,1,7,6},
@@ -23,8 +23,12 @@ namespace SudokuSolver2
                 new List<int> {0,1,2,9,0,6,5,3,0}
             };
 
+            BoardState = CreateNewBoard(board);
 
+            
         }
+
+       
     }
 }
 
