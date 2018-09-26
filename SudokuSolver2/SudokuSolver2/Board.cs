@@ -56,16 +56,19 @@ namespace SudokuSolver2
             return newBoard;
         }
 
-        public bool ContainsZeros()
+        public int HowManyZeroes()
         {
+            var zeros = 0;
             foreach (var i in BoardState)
             {
                 foreach (var boardSquare in i)
                 {
-                    if (boardSquare.ConfirmedValue == 0) { return true; }
+                    if (boardSquare.ConfirmedValue == 0) { zeros++; }
                 }
-                
-            }return false;
+
+            }
+
+            return zeros;
         }
     }
 }

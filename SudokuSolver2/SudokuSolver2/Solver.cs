@@ -15,18 +15,19 @@ namespace SudokuSolver2
         {
             for (int x = 0; x < 9; x++)
             {
-                var row = new List<string>();
+                var row = "";
                 for (int y = 0; y < 9; y++)
                 {
                     var square = board.BoardState[x][y].ConfirmedValue;
                     var squareString = square.ToString();
-                    row.Add(squareString);
-                    row.Add(", ");
+                    row = row + squareString + ", ";
+                  
 
                 }
                 Console.WriteLine(row);
+                
             }
-
+            Console.ReadLine();
         }
 
         public Board Board;

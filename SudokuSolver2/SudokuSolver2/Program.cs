@@ -10,6 +10,8 @@ namespace SudokuSolver2
     {
         static void Main(string[] args)
         {
+            var solve = new Board1Solver();
+            solve.DoAThing();
         }
     }
 }
