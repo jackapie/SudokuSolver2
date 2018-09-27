@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SudokuSolver2.BoardFactory;
+using SudokuSolver2.SolverBehaviours;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
