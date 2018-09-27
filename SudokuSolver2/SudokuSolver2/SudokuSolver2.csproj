@@ -43,19 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Board1.cs" />
-    <Compile Include="Board1Solver.cs" />
-    <Compile Include="Board.cs" />
-    <Compile Include="BoardSquare.cs" />
-    <Compile Include="ISolverBehaviour.cs" />
+    <Compile Include="BoardFactory\Board1.cs" />
+    <Compile Include="Solvers\Board1Solver.cs" />
+    <Compile Include="BoardFactory\Board.cs" />
+    <Compile Include="BoardFactory\BoardSquare.cs" />
+    <Compile Include="SolverBehaviours\ISolverBehaviour.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Solver.cs" />
-    <Compile Include="SolveColumn.cs" />
-    <Compile Include="SolveBox.cs" />
-    <Compile Include="SolveRow.cs" />
-    <Compile Include="SolveSuggestedValue.cs" />
-    <Compile Include="SudokuBoardFactory.cs" />
+    <Compile Include="Solvers\Solver.cs" />
+    <Compile Include="SolverBehaviours\SolveColumn.cs" />
+    <Compile Include="SolverBehaviours\SolveBox.cs" />
+    <Compile Include="SolverBehaviours\SolveRow.cs" />
+    <Compile Include="SolverBehaviours\SolveSuggestedValue.cs" />
+    <Compile Include="BoardFactory\SudokuBoardFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

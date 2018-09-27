@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SudokuSolver2
+namespace SudokuSolver2.Solvers
 {
     public class Board1Solver : Solver
     {
@@ -34,10 +34,11 @@ namespace SudokuSolver2
                 PerformSolve(Board);
                 SolverBehaviour = new SolveSuggestedValue();
                 PerformSolve(Board);
+                Display(Board);
 
             }
             //if board does not contain zeros, display board.
-            Display(Board);
+           
            
             //Loop over.
 

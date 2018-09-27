@@ -1,10 +1,12 @@
-﻿using System;
+﻿using SudokuSolver2.BoardFactory;
+using SudokuSolver2.SolverBehaviours;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SudokuSolver2
+namespace SudokuSolver2.Solvers
 {
     public abstract class Solver
     {
@@ -27,6 +29,7 @@ namespace SudokuSolver2
                 Console.WriteLine(row);
                 
             }
+            Console.WriteLine();
             Console.ReadLine();
         }
 

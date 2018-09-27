@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SudokuSolver2
+namespace SudokuSolver2.BoardFactory
 {
     public class Board
     {
@@ -70,5 +70,6 @@ namespace SudokuSolver2
 
             return zeros;
         }
+
     }
 }
