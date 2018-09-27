@@ -13,26 +13,38 @@ namespace SudokuSolver2
             for (int x = 0; x < 9; x++)
             {
                 var currentRowMissing = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-                int NumberOfZeros = 0;
-                int whereIsTheZero = -1;
+                var currentRowUsed = new List<int> { };
+                //int NumberOfZeros = 0;
+                //int whereIsTheZero = -1;
                 for (int y = 0; y < 9; y++)
                 {
                     int currentSquare = board.BoardState[x][y].ConfirmedValue;
                     if (currentSquare > 0)
                     {
                         currentRowMissing.Remove(currentSquare);
+                        currentRowUsed.Add(currentSquare);
                     }
-                    if (currentSquare == 0)
-                    {
-                        NumberOfZeros++;
-                        whereIsTheZero = y;
-                    }
+                   
                 }
-                if (NumberOfZeros == 1)
+               
+                // Remove suggestedValues from zero value boardSquares
+                for (int y = 0; y < 9; y++)
                 {
-                    var square = board.BoardState[x][whereIsTheZero];
-                    square.ConfirmedValue = currentRowMissing[0];
+                    var currentSquare = board.BoardState[x][y];
+                    if (currentSquare.ConfirmedValue == 0)
+                    {
+                       
+                        foreach(int value in currentRowUsed)
+                        {
+                            currentSquare.SuggestedValues.Remove(value);
+                        }
+                    }
+
                 }
+
+
+
+
             }
         }
     }

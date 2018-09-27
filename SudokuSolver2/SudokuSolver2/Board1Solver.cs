@@ -15,10 +15,6 @@ namespace SudokuSolver2
             Board = BoardFactory.CreateBoard(1);
         }
 
-        public Board1Solver()
-        {
-
-        }
 
         public void DoAThing() { 
             GetBoard();
@@ -35,6 +31,8 @@ namespace SudokuSolver2
                 SolverBehaviour = new SolveColumn();
                 PerformSolve(Board);
                 SolverBehaviour = new SolveBox();
+                PerformSolve(Board);
+                SolverBehaviour = new SolveSuggestedValue();
                 PerformSolve(Board);
 
             }

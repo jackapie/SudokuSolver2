@@ -54,6 +54,7 @@
     <Compile Include="SolveColumn.cs" />
     <Compile Include="SolveBox.cs" />
     <Compile Include="SolveRow.cs" />
+    <Compile Include="SolveSuggestedValue.cs" />
     <Compile Include="SudokuBoardFactory.cs" />
   </ItemGroup>
   <ItemGroup>
