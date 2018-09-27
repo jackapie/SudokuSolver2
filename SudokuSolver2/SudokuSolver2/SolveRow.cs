@@ -14,8 +14,7 @@ namespace SudokuSolver2
             {
                 var currentRowMissing = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
                 var currentRowUsed = new List<int> { };
-                //int NumberOfZeros = 0;
-                //int whereIsTheZero = -1;
+                
                 for (int y = 0; y < 9; y++)
                 {
                     int currentSquare = board.BoardState[x][y].ConfirmedValue;
