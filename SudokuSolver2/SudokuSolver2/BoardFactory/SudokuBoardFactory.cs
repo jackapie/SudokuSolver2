@@ -19,6 +19,10 @@ namespace SudokuSolver2.BoardFactory
             {
                 return new Board2();
             }
+            if (level == 3)
+            {
+                return new Board3();
+            }
 
             else return null;
         }

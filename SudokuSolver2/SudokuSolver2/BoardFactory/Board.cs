@@ -56,19 +56,23 @@ namespace SudokuSolver2.BoardFactory
             return newBoard;
         }
 
-        public int HowManyZeroes()
+        public int GetTotalSuggestions()
         {
-            var zeros = 0;
+            var totalSuggestions = 0;
             foreach (var i in BoardState)
             {
                 foreach (var boardSquare in i)
                 {
-                    if (boardSquare.ConfirmedValue == 0) { zeros++; }
+                    if (boardSquare.ConfirmedValue == 0)
+                    {
+                        totalSuggestions = boardSquare.SuggestedValues.Count + totalSuggestions;
+                        
+                    }
                 }
 
             }
 
-            return zeros;
+            return totalSuggestions;
         }
 
     }

@@ -10,17 +10,17 @@ namespace SudokuSolver2.Solvers
 {
     public class Solver
     {
-        public ISolverBehaviour SolverBehaviour { get; set; }
+        ISolverBehaviour SolverBehaviour { get; set; }
 
 
-        public void Display(Board board)
+        void Display()
         {
             for (int x = 0; x < 9; x++)
             {
                 var row = "";
                 for (int y = 0; y < 9; y++)
                 {
-                    var square = board.BoardState[x][y].ConfirmedValue;
+                    var square = Board.BoardState[x][y].ConfirmedValue;
                     var squareString = square.ToString();
                     row = row + squareString + ", ";
 
@@ -33,15 +33,15 @@ namespace SudokuSolver2.Solvers
             Console.ReadLine();
         }
 
-        public Board Board;
+        Board Board;
 
-        public void PerformSolve()
+        void PerformSolve()
         {
             SolverBehaviour.Solve(Board);
         }
 
 
-        public void GetBoard(int level)
+        void GetBoard(int level)
         {
             var BoardFactory = new SudokuBoardFactory();
             Board = BoardFactory.CreateBoard(level);
@@ -54,9 +54,9 @@ namespace SudokuSolver2.Solvers
             var zeroesLastTime = 0;
             //insert loop
             //while (board contains any zeros) do the following set a solver behaviour and PerformSolve
-            while (Board.HowManyZeroes() != zeroesLastTime)
+            while (Board.GetTotalSuggestions() != zeroesLastTime)
             {
-                zeroesLastTime = Board.HowManyZeroes();
+                zeroesLastTime = Board.GetTotalSuggestions();
 
                 SolverBehaviour = new SolveRow();
                 PerformSolve();
@@ -66,7 +66,7 @@ namespace SudokuSolver2.Solvers
                 PerformSolve();
                 SolverBehaviour = new SolveSuggestedValue();
                 PerformSolve();
-                Display(Board);
+                Display();
 
             }
         }
