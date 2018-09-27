@@ -11,7 +11,7 @@ namespace SudokuSolver2
     {
         static void Main(string[] args)
         {
-            var solve = new Board1Solver();
+            var solve = new Board2Solver();
             solve.DoAThing();
         }
     }

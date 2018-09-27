@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoardFactory\Board1.cs" />
+    <Compile Include="BoardFactory\Board2.cs" />
+    <Compile Include="Solvers\Board2Solver.cs" />
     <Compile Include="Solvers\Board1Solver.cs" />
     <Compile Include="BoardFactory\Board.cs" />
     <Compile Include="BoardFactory\BoardSquare.cs" />
