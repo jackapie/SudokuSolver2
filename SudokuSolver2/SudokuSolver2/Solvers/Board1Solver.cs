@@ -18,7 +18,7 @@ namespace SudokuSolver2.Solvers
         }
 
 
-        public void DoAThing() { 
+        public void SolveIt() { 
             GetBoard();
 
             var zeroesLastTime = 0;
@@ -29,13 +29,13 @@ namespace SudokuSolver2.Solvers
                 zeroesLastTime = Board.HowManyZeroes();
 
                 SolverBehaviour = new SolveRow();
-                PerformSolve(Board);
+                PerformSolve();
                 SolverBehaviour = new SolveColumn();
-                PerformSolve(Board);
+                PerformSolve();
                 SolverBehaviour = new SolveBox();
-                PerformSolve(Board);
+                PerformSolve();
                 SolverBehaviour = new SolveSuggestedValue();
-                PerformSolve(Board);
+                PerformSolve();
                 Display(Board);
 
             }

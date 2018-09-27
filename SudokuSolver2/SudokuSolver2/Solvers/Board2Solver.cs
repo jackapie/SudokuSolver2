@@ -18,33 +18,9 @@ namespace SudokuSolver2.Solvers
         }
 
 
-        public void DoAThing() { 
-            GetBoard();
-
-            var zeroesLastTime = 0;
-            //insert loop
-            //while (board contains any zeros) do the following set a solver behaviour and PerformSolve
-            while (Board.HowManyZeroes() != zeroesLastTime)
-            {
-                zeroesLastTime = Board.HowManyZeroes();
-
-                SolverBehaviour = new SolveRow();
-                PerformSolve(Board);
-                SolverBehaviour = new SolveColumn();
-                PerformSolve(Board);
-                SolverBehaviour = new SolveBox();
-                PerformSolve(Board);
-                SolverBehaviour = new SolveSuggestedValue();
-                PerformSolve(Board);
-                Display(Board);
-
-            }
-            //if board does not contain zeros, display board.
+       
            
-           
-            //Loop over.
 
 
         }
-    }
 }
