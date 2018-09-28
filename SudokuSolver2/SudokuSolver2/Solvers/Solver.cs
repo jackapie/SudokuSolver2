@@ -66,6 +66,10 @@ namespace SudokuSolver2.Solvers
                 PerformSolve();
                 SolverBehaviour = new SolveSuggestedValue();
                 PerformSolve();
+                SolverBehaviour = new SolveSimilarsRow();
+                PerformSolve();
+                SolverBehaviour = new SolveSimilarsColumn();
+                PerformSolve();
                 DisplayFinalState();
 
             }

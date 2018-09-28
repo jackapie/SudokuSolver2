@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoardFactory\Board5.cs" />
+    <Compile Include="BoardFactory\Board4.cs" />
     <Compile Include="BoardFactory\Board1.cs" />
     <Compile Include="BoardFactory\Board2.cs" />
     <Compile Include="BoardFactory\Board.cs" />
@@ -51,6 +53,8 @@
     <Compile Include="SolverBehaviours\ISolverBehaviour.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolverBehaviours\SolveSimilarsColumn.cs" />
+    <Compile Include="SolverBehaviours\SolveSimilarsRow.cs" />
     <Compile Include="Solvers\Solver.cs" />
     <Compile Include="SolverBehaviours\SolveColumn.cs" />
     <Compile Include="SolverBehaviours\SolveBox.cs" />

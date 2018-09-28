@@ -8,6 +8,7 @@ namespace SudokuSolver2.BoardFactory
 {
     public class Board2 : Board
     {
+        //A puzzle from Brainium Sudoku app, rated "Easy"
         public Board2()
         {
             var board = new List<List<int>>

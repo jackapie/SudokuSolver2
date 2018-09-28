@@ -12,7 +12,7 @@ namespace SudokuSolver2
         static void Main(string[] args)
         {
             var solve = new Solver();
-            solve.SolveIt(3);
+            solve.SolveIt(5);
         }
     }
 }

@@ -8,6 +8,7 @@ namespace SudokuSolver2.BoardFactory
 {
     public class Board3 : Board
     {
+        //This board is for the most difficult sudoku puzzle
         public Board3()
         {
             var board = new List<List<int>>
