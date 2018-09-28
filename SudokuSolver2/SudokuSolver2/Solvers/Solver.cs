@@ -13,7 +13,7 @@ namespace SudokuSolver2.Solvers
         ISolverBehaviour SolverBehaviour { get; set; }
 
 
-        void Display()
+        void DisplayFinalState()
         {
             for (int x = 0; x < 9; x++)
             {
@@ -51,12 +51,12 @@ namespace SudokuSolver2.Solvers
         {
             GetBoard(level);
 
-            var zeroesLastTime = 0;
+            var totalSuggestionsLastTime = 0;
             //insert loop
             //while (board contains any zeros) do the following set a solver behaviour and PerformSolve
-            while (Board.GetTotalSuggestions() != zeroesLastTime)
+            while (Board.GetTotalSuggestions() != totalSuggestionsLastTime)
             {
-                zeroesLastTime = Board.GetTotalSuggestions();
+                totalSuggestionsLastTime = Board.GetTotalSuggestions();
 
                 SolverBehaviour = new SolveRow();
                 PerformSolve();
@@ -66,9 +66,47 @@ namespace SudokuSolver2.Solvers
                 PerformSolve();
                 SolverBehaviour = new SolveSuggestedValue();
                 PerformSolve();
-                Display();
+                DisplayFinalState();
 
             }
+            DisplaySuggestedValuesLeft();
+        }
+
+        void DisplaySuggestedValuesLeft()
+        {
+            for (int x = 0; x < 9; x++)
+            {
+                var row = "";
+                for (int y = 0; y < 9; y++)
+                {
+                    var square = Board.BoardState[x][y];
+                    if (square.ConfirmedValue == 0)
+                    {
+                        var suggestedList = "";
+                        foreach (var value in square.SuggestedValues)
+                        {
+
+                            var suggestedValue = value.ToString();
+                            
+                            suggestedList = suggestedList + suggestedValue;
+                            
+                        }
+                        row = row + suggestedList + ",";
+                    }
+                    if(square.ConfirmedValue > 0)
+                    {
+                        var confirmedValue = square.ConfirmedValue.ToString();
+                        row = row + confirmedValue + ",";
+                    }
+
+
+                }
+
+                Console.WriteLine(row);
+
+            }
+            Console.WriteLine();
+            Console.ReadLine();
         }
 
 
