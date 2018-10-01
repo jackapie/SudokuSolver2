@@ -57,18 +57,15 @@ namespace SudokuSolver2.Solvers
             while (Board.GetTotalSuggestions() != totalSuggestionsLastTime)
             {
                 totalSuggestionsLastTime = Board.GetTotalSuggestions();
-
-                SolverBehaviour = new SolveRow();
-                PerformSolve();
-                SolverBehaviour = new SolveColumn();
-                PerformSolve();
-                SolverBehaviour = new SolveBox();
+                             
+                SolverBehaviour = new MissingNumbers();
                 PerformSolve();
                 SolverBehaviour = new SolveSuggestedValue();
                 PerformSolve();
-                SolverBehaviour = new SolveSimilarsRow();
+               
+                SolverBehaviour = new Similar2s();
                 PerformSolve();
-                SolverBehaviour = new SolveSimilarsColumn();
+                SolverBehaviour = new Similar3s();
                 PerformSolve();
                 DisplayFinalState();
 

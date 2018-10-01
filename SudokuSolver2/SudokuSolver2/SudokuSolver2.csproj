@@ -53,6 +53,9 @@
     <Compile Include="SolverBehaviours\ISolverBehaviour.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolverBehaviours\MissingNumbers.cs" />
+    <Compile Include="SolverBehaviours\Similar2s.cs" />
+    <Compile Include="SolverBehaviours\Similar3s.cs" />
     <Compile Include="SolverBehaviours\SolveSimilarsColumn.cs" />
     <Compile Include="SolverBehaviours\SolveSimilarsRow.cs" />
     <Compile Include="Solvers\Solver.cs" />
@@ -61,6 +64,10 @@
     <Compile Include="SolverBehaviours\SolveRow.cs" />
     <Compile Include="SolverBehaviours\SolveSuggestedValue.cs" />
     <Compile Include="BoardFactory\SudokuBoardFactory.cs" />
+    <Compile Include="SquareLists\BoxToList.cs" />
+    <Compile Include="SquareLists\ColumnToList.cs" />
+    <Compile Include="SquareLists\IComponentToList.cs" />
+    <Compile Include="SquareLists\RowToList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
